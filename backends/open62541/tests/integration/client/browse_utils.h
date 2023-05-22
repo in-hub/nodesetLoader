@@ -1,7 +1,7 @@
 #ifndef _BROWSE_UTILS_H
 #define _BROWSE_UTILS_H
 
-#include <open62541/types.h>
+#include <open62541.h>
 #include <vector>
 
 class UA_Client;

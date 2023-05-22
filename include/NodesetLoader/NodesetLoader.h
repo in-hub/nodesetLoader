@@ -8,9 +8,7 @@
 #ifndef NODESETLOADER_NODESETLOADER_H
 #define NODESETLOADER_NODESETLOADER_H
 
-#include <open62541/types.h>
-#include <open62541/types_generated.h>
-#include <open62541/types_generated_handling.h>
+#include <open62541.h>
 
 #include "Extension.h"
 #include "Logger.h"

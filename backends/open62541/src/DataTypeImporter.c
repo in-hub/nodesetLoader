@@ -5,8 +5,7 @@
  *    Copyright 2020 (c) Matthias Konnerth
  */
 
-#include <open62541/server.h>
-#include <open62541/types.h>
+#include <open62541.h>
 
 #include "DataTypeImporter.h"
 #include "conversion.h"

@@ -8,7 +8,7 @@
 #ifndef DATATYPEIMPORTER_H
 #define DATATYPEIMPORTER_H
 
-#include <open62541/server.h>
+#include <open62541.h>
 
 #include "NodesetLoader/NodesetLoader.h"
 

@@ -1,8 +1,6 @@
 #ifndef TESTHELPER_H
 #define TESTHELPER_H
-#include <open62541/server.h>
-#include <open62541/types.h>
-#include <open62541/types_generated.h>
+#include <open62541.h>
 
 UA_NodeId getTypeId(UA_UInt16 typeIndex, UA_Boolean isNamespaceZero, const UA_DataType* customTypes)
 {

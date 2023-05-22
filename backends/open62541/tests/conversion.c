@@ -4,7 +4,7 @@
 
 #include "../src/conversion.h"
 #include "check.h"
-#include <open62541/types.h>
+#include <open62541.h>
 
 #include "testHelper.h"
 

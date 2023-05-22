@@ -1,7 +1,7 @@
 #ifndef _SORT_UTILS_H
 #define _SORT_UTILS_H
 
-#include <open62541/types.h>
+#include <open62541.h>
 #include <vector>
 
 typedef std::vector<UA_NodeId *> TNodeIdContainer;

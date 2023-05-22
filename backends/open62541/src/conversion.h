@@ -7,7 +7,7 @@
 
 #ifndef CONVERSION_H
 #define CONVERSION_H
-#include <open62541/types.h>
+#include <open62541.h>
 
 #include "NodesetLoader/NodesetLoader.h"
 

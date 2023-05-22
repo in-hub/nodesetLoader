@@ -5,7 +5,7 @@
  *    Copyright 2020 (c) Matthias Konnerth
  */
 
-#include <open62541/types_generated.h>
+#include <open62541.h>
 
 #include "Value.h"
 #include "conversion.h"

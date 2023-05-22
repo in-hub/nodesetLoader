@@ -8,7 +8,7 @@
 #ifndef SERVERCONTEXT_H
 #define SERVERCONTEXT_H
 
-#include <open62541/server.h>
+#include <open62541.h>
 
 // ServerContext struct bundles the open62541's UA_Server object
 // and a table that maps indices used in the nodeset file to indices used in the server.

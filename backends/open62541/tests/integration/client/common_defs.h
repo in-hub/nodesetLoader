@@ -1,8 +1,7 @@
 #ifndef _COMMON_DEFS_H
 #define _COMMON_DEFS_H
 
-#include <open62541/nodeids.h>
-#include <open62541/types.h>
+#include <open62541.h>
 
 /*****************************************************************************/
 // constants

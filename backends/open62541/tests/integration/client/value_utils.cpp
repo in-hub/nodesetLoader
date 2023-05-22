@@ -2,7 +2,7 @@
 #include "common_defs.h"
 #include "operator_ov.h"
 
-#include <open62541/client.h>
+#include <open62541.h>
 #include <string>
 #include <string_view>
 

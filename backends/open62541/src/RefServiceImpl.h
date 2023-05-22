@@ -8,7 +8,7 @@
 #ifndef REFSERVICEIMPL_H
 #define REFSERVICEIMPL_H
 
-#include <open62541/server.h>
+#include <open62541.h>
 #include "NodesetLoader/ReferenceService.h"
 
 NL_ReferenceService *RefServiceImpl_new(struct UA_Server *server);

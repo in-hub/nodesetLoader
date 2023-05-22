@@ -5,7 +5,7 @@
  *    Copyright 2020 (c) Matthias Konnerth
  */
 
-#include <open62541/server.h>
+#include <open62541.h>
 
 #include <NodesetLoader/dataTypes.h>
 #include "customDataType.h"

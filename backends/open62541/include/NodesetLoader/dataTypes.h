@@ -7,7 +7,7 @@
 
 #ifndef __NODESETLOADER_BACKEND_OPEN62541_DATATYPES_H__
 #define __NODESETLOADER_BACKEND_OPEN62541_DATATYPES_H__
-#include <open62541/types.h>
+#include <open62541.h>
 
 #if defined(_WIN32)
 #ifdef __GNUC__

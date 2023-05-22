@@ -2,7 +2,7 @@
 #define _VALUE_UTILS_H
 
 #include <fstream>
-#include <open62541/types.h>
+#include <open62541.h>
 
 void PrintArrayDimensions(const size_t arrayDimSize,
                           const UA_UInt32 *const pArrayDimensions,

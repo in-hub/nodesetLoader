@@ -8,7 +8,7 @@
 #ifndef __NODESETLOADER_BACKEND_OPEN62541_H__
 #define __NODESETLOADER_BACKEND_OPEN62541_H__
 
-#include <open62541/server.h>
+#include <open62541.h>
 #include "NodesetLoader/Extension.h"
 
 #include <stdbool.h>
