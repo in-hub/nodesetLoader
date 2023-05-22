@@ -8,7 +8,12 @@
 #ifndef SERVERCONTEXT_H
 #define SERVERCONTEXT_H
 
+#include <NodesetLoader/NodesetLoader.h>
 #include <open62541.h>
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 // ServerContext struct bundles the open62541's UA_Server object
 // and a table that maps indices used in the nodeset file to indices used in the server.
@@ -22,13 +27,17 @@ ServerContext *ServerContext_new(struct UA_Server *server);
 void ServerContext_delete(ServerContext *serverContext);
 
 // Gets pointer to the UA_Server object
-struct UA_Server *ServerContext_getServerObject(const ServerContext *serverContext);
+LOADER_EXPORT struct UA_Server *ServerContext_getServerObject(const ServerContext *serverContext);
 
 // Use ServerContext_addNamespaceIdx to sequentially add namespaces as they appear in the
 // nodeset file.
-void ServerContext_addNamespaceIdx(ServerContext *serverContext, UA_UInt16 serverIdx);
+LOADER_EXPORT void ServerContext_addNamespaceIdx(ServerContext *serverContext, UA_UInt16 serverIdx);
 
 // Translates from an index used in the nodeset file to an index used in the server
 UA_UInt16 ServerContext_translateToServerIdx(const ServerContext *serverContext, UA_UInt16 nodesetIdx);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
