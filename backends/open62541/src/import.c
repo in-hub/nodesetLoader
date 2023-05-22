@@ -661,6 +661,7 @@ static void addNodes(NodesetLoader *loader, ServerContext *serverContext,
 }
 
 bool NodesetLoader_loadFile(struct UA_Server *server, const char *path,
+                            NL_FileContext *handler,
                             NodesetLoader_ExtensionInterface *extensionHandling)
 {
     if (!server)
@@ -674,11 +675,28 @@ bool NodesetLoader_loadFile(struct UA_Server *server, const char *path,
 
     ServerContext *serverContext = ServerContext_new(server);
 
-    NL_FileContext handler;
-    handler.addNamespace = NodesetLoader_BackendOpen62541_addNamespace;
-    handler.userContext = serverContext;
-    handler.file = path;
-    handler.extensionHandling = extensionHandling;
+    NL_FileContext defaultHandler;
+    memset(&defaultHandler, 0, sizeof(defaultHandler));
+    if (!handler)
+    {
+        handler = &defaultHandler;
+    }
+    if (!handler->addNamespace)
+    {
+        handler->addNamespace = NodesetLoader_BackendOpen62541_addNamespace;
+    }
+    if (!handler->userContext)
+    {
+        handler->userContext = serverContext;
+    }
+    if (!handler->file)
+    {
+        handler->file = path;
+    }
+    if (!handler->extensionHandling)
+    {
+        handler->extensionHandling = extensionHandling;
+    }
 
     UA_ServerConfig *config = UA_Server_getConfig(server);
     NodesetLoader_Logger *logger =
@@ -690,7 +708,7 @@ bool NodesetLoader_loadFile(struct UA_Server *server, const char *path,
     NodesetLoader *loader = NodesetLoader_new(logger, refService);
     logger->log(logger->context, NODESETLOADER_LOGLEVEL_DEBUG,
                 "Start import nodeset: %s", path);
-    bool importStatus = NodesetLoader_importFile(loader, &handler);
+    bool importStatus = NodesetLoader_importFile(loader, handler);
     bool sortStatus = NodesetLoader_sort(loader);
     bool retStatus = importStatus && sortStatus;
     if (retStatus && sortStatus)

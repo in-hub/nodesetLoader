@@ -115,7 +115,7 @@ int main(int argc, const char *argv[])
 
     for (int cnt = 1; cnt < argc; cnt++)
     {
-        if (!NodesetLoader_loadFile(server, argv[cnt], NULL))
+        if (!NodesetLoader_loadFile(server, argv[cnt], NULL, NULL))
         {
             printf("nodeset could not be loaded, exit\n");
             return 1;

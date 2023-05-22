@@ -10,6 +10,7 @@
 
 #include <open62541.h>
 #include "NodesetLoader/Extension.h"
+#include "NodesetLoader/NodesetLoader.h"
 
 #include <stdbool.h>
 #include <stdio.h>
@@ -34,6 +35,7 @@ extern "C" {
 #endif
 
 LOADER_EXPORT bool NodesetLoader_loadFile(struct UA_Server *, const char *path,
+                            NL_FileContext *handler,
                             NodesetLoader_ExtensionInterface *extensionHandling);
 
 #ifdef __cplusplus
