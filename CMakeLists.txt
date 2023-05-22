@@ -256,7 +256,7 @@ set(NODESETLOADER_PRIVATE_HEADERS
     CACHE INTERNAL "")
 
 if(NOT ${ENABLE_BUILD_INTO_OPEN62541})
-    add_library(NodesetLoader ${NODESETLOADER_SOURCES})
+    add_library(NodesetLoader SHARED ${NODESETLOADER_SOURCES})
 
     target_include_directories(NodesetLoader
                                PUBLIC ${NODESETLOADER_PUBLIC_INCLUDES}
